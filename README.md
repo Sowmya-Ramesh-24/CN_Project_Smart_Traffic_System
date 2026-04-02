@@ -25,7 +25,7 @@ To design and implement a real time traffic system that
                       ▼
             ┌──────────────────────┐
             │        ESP32         │
-            │  (Sensor + Actuator)│
+            │  (Sensor + Actuator) │
             └─────────┬────────────┘
                       │
     ┌─────────────────┼─────────────────┐
@@ -45,11 +45,11 @@ S1 and S2 (IR Sensors)
   -  Output LOW (0) when object detected
 
 S3 (Ultrasonic Sensor) 
-  - - Measures distance of incoming vehicles
+  - Measures distance of incoming vehicles
 
 --- 
 ## Traffic Control Logic
-1. If **pedestrian is detected via S1 or S1**
+1. If **pedestrian is detected via S1 or S2**
     - checks vehicle distance using S3
       
 2. If **road is safe (no close vehicle)**:
@@ -84,7 +84,7 @@ S3 (Ultrasonic Sensor)
 ---
 ## Technologies Used
 - **ESP32 (Arduino C++)**
-- **Python (Sockets, SSL, JSON, Threading)**
+- **Python (Sockets, SSL, JSON, TLS)**
 - **UDP (Traffic logging)**
 - **TLS Encryption**
 
@@ -145,9 +145,11 @@ python udp_server.py
 ---
 ## Run client on client machine
 - create .env using .env.example
-  SERVER_IP=192.168.x.x   # Replace with server machine IP
+```text
+  SERVER_IP=192.168.x.x  ->  Replace with server machine IP
   PORT=5000
   UDP_PORT=6000
+```
 - and then run
 ``` bash
 python client.py
