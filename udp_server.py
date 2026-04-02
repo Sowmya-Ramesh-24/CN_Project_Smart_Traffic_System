@@ -3,10 +3,12 @@ import json
 import csv
 import time
 import os
+from dotenv import load_dotenv
+import os
 
+load_dotenv()
 UDP_IP = "0.0.0.0"
-UDP_PORT = 6000
-
+UDP_PORT = int(os.getenv("UDP_PORT", 6000))
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 sock.bind((UDP_IP, UDP_PORT))
 

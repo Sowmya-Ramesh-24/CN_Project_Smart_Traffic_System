@@ -4,3 +4,4 @@ key.pem
 __pycache__/
 *.pyc
 traffic_log.csv
+.env

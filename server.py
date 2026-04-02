@@ -3,9 +3,13 @@ import ssl
 import json
 import threading
 import time
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 HOST = ''
-PORT = 5000
+PORT = int(os.getenv("PORT", 5000))
 
 # -------------------------------
 # SETTINGS
