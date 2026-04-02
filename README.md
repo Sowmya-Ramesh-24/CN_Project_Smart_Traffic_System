@@ -130,9 +130,10 @@ openssl req -x509 -newkey rsa:2048 -keyout key.pem -out cert.pem -days 365 -node
 ```
 place inside
 servers/
+```text
 ├── cert.pem
 ├── key.pem
-
+```
 ---
 ## Run server on server machine
 - create .env inside servers using .env.example
